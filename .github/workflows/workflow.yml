@@ -15,7 +15,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: handleCreate
-          source: src/handleCreate
+          source: src/handleCreate/index
 
       - name: checkout source code
         uses: actions/checkout@v3
