@@ -14,7 +14,7 @@ const schema = new dynamoose.Schema({
 // create the model, which requires the name of the table and the schema
 const Person = dynamoose.model('people', schema);
 
-exports.handler = async(event) => {
+exports.handleCreate = async(event) => {
   console.log(event)
   const payload = JSON.parse(event.body)
   try{
