@@ -16,6 +16,8 @@ jobs:
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: handleCreate
           source: src/handleCreate/index.js
+      - name: install dependencies
+        run: npm install
 
       - name: checkout source code
         uses: actions/checkout@v3
