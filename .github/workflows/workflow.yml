@@ -17,7 +17,7 @@ jobs:
           go-version: ${{ matrix.go-version }}
       - name: Build binary
         run: |
-          cd ./ && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -o main main.go && zip deployment.zip main
+          zip -r deployment.zip .
       - name: default deploy
         uses: appleboy/lambda-action@v0.1.9
         with:
@@ -25,7 +25,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: gorush
-          zip_file: example/deployment.zip
+          zip_file: src/deployment.zip
           memory_size: 128
           timeout: 10
           handler: foobar
