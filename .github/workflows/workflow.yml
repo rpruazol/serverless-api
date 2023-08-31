@@ -25,5 +25,5 @@ jobs:
           memory_size: 128
           timeout: 10
           handler: foobar
-          role: arn:aws:lambda:us-east-1:314524465458:function:handleCreate
+          function_name: handleCreate
           runtime: nodejs18.x
