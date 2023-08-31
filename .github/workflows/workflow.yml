@@ -17,7 +17,7 @@ jobs:
           function_name: handleCreate
           source: src/handleCreate/index.js
       - name: install dependencies
-        run: npm install
+        run: npm --prefix ./src install
 
       - name: checkout source code
         uses: actions/checkout@v3
