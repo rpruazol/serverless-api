@@ -3,7 +3,7 @@ on: [push]
 jobs:
 
   deploy_source:
-    name: Deploy
+    name: handleCreate
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
@@ -16,6 +16,10 @@ jobs:
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: handleCreate
           source: src/handleCreate
+
+  deploy_source:
+    name: handleDelete
+    runs-on: ubuntu-latest
     steps:
       - name: checkout source code
         uses: actions/checkout@v3
@@ -27,6 +31,10 @@ jobs:
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: handleDelete
           source: src/handleDelete
+  
+  deploy_source:
+    name: handleGet
+    runs-on: ubuntu-latest
     steps:
       - name: checkout source code
         uses: actions/checkout@v3
@@ -38,6 +46,10 @@ jobs:
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: handleGet
           source: src/handleGet
+  
+  deploy_source:
+    name: handleDelete
+    runs-on: ubuntu-latest
     steps:
       - name: checkout source code
         uses: actions/checkout@v3
